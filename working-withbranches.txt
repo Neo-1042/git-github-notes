@@ -1,2 +1,0 @@
-Added a third branch with
-git checkout -b third-branch
