@@ -1,2 +1,4 @@
 Here we add another file. Let's add this new file to the staging area,
 and then commit to save the changes
+
+I forgot this part, good to have detached HEAD mode
