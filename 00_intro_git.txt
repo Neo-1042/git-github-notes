@@ -1,5 +1,15 @@
 28/March/2025
 
+Git means tracking changes, NOT storing files again and again!
+
 Working Directory WD = Local directory tracked by git (.git hidden folder)
 
+Repository = Where all the version management happens
 
+The git repository is divided into two areas:
+[1] Staging Area (Basically an index File) => Draft area before becoming an actual commit
+[2] Commits (Contains the different snapshots)
+
+Workflow:
+WD --> SD --> Commits
+---------------------------------------------------------------------------------------------------
