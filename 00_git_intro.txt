@@ -10,6 +10,9 @@ The git repository is divided into two areas:
 [1] Staging Area (Basically an index File) => Draft area before becoming an actual commit
 [2] Commits (Contains the different snapshots)
 
+Note: The commits set is a subset of the staging area set. i.e., every file in the commit area is also
+in the staging area, but not necessarily the other way around.
+
 Workflow:
 WD --> SD --> Commits
 ---------------------------------------------------------------------------------------------------

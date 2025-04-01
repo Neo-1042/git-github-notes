@@ -18,3 +18,7 @@ git checkout feature01
 git log # Shows the same commits as 'master', with the same IDs (hash codes)
 # Create a new branch called 'feature02' while stillbeing on 'feature01' and switch to it
 git checkout -b feature02
+###################################################################################################
+# From git version 2.23 onwards we have new commands available
+git switch feauture04 # Switches to 'feature04' branch
+git switch -c new-branch # Creates new-branch and switches to it. git checkout -b new-branch
