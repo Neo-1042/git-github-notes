@@ -12,7 +12,8 @@
 # At the same time, we have to be aware of the files that we have on the SA = Staging Area
 git ls-files # These files are on the staging area and WD
 git status
-git add file1.txt
+# Remove file.txt from the working directory first
+git add file1.txt 
 git rm file1.txt
 git status # Deleted: file1.txt
 git ls-files # file1.txt won't appear here
@@ -34,7 +35,8 @@ git checkout . # Return the state of ALL files on this current branch
 # Then, to restore/undo all UNSTAGED changes:
 git checkout .
 # From git v2.23 on:
-git restore file2.cpp # Equivalent to git checkout file2.cpp
+git restore file2.cpp # Revert changes in tracked files
+# Delete untracked files
 git clean -dn # d -> delete all UNSTAGED changes, n -> name the files to be deleted
 git clean -df # f -> force
 #-------------------------------------------------------------------------------------------------#
