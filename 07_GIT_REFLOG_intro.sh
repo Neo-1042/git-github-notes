@@ -7,5 +7,6 @@ git reset HEAD~1 # Default: delete the commit and delete the changes from the SA
 git reset --hard HEAD~1 # Delete everything everywhere
 # What if we need back the deleted information??
 ##################################################
-
-
+git reflog
+# Stores ALL the changes for 30 days
+# Challenge: delete this changes and THEN get them back
