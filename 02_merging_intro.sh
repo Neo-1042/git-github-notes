@@ -6,5 +6,4 @@ git commit -m "Adds html and wsdl file to project"
 git checkout master
 ###################################################################################################
 # HEAD -> master,
-
 git merge feature03 # Merges feature03 into the current branch (master)
