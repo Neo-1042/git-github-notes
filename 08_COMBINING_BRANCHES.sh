@@ -3,8 +3,7 @@
 # feature branches
 # GOAL: How to combine master <---> featureX branches?
 #       Either master INTO featureX or featureX into master
-git merge
-git rebase # NEW
+git merge feature
 ###########################################################
 # MERGE TYPES
 # 1] Fast-forward +++++
