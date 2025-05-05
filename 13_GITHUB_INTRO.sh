@@ -11,11 +11,14 @@
 # git ------------> GitHub = origin (alias/shorthand of the URL of the remote repo)
 
 # Establish a connection between local and remote
-git remote add origin URL # origin := URL
-git remote add ssh-origin git@github.com:x/myrepo.git
+# git remote add origin URL # origin := URL
+git remote add origin https://github.com/Neo-1042/git-github-notes.git
+git remote add ssh-origin git@github.com:Neo-1042/git-github-notes.git
+# Verify that you set the URL correctly:
+git remote -v
 # Push the local data from git to GitHub
 git push
-git push origin master
+git push -u origin master # or 'main', depending on the name of the branch
 # Pull the remote data from GitHub to git
 git pull
 
