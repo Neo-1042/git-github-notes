@@ -43,4 +43,11 @@ git add .
 git commit -m "Cambia xml"
 git push -u origin development # Upstream
 git tag -a v1.0.0 -m "First stable release wujuu"
+###################################################################################################
+# Personal Access Token
+###################################################################################################
+# For macOS users, the credentials can be updated via the terminal as follows:
+git credential-osxkeychain erase
+host=github.com
+protocol=https
 
