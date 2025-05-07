@@ -50,4 +50,9 @@ git tag -a v1.0.0 -m "First stable release wujuu"
 git credential-osxkeychain erase
 host=github.com
 protocol=https
+###################################################################################################
+# Fatal: The current branch master has no upstream branch.
+# Solution: To push the current branch and set the remote as upstream, use
+git push --set-upstream origin master
 
+git branch -a # Shows all branches, both remote and local
