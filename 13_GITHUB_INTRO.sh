@@ -35,9 +35,10 @@ git pull # pulls code from GitHub to my working directory.
 # remote-tracking branches
 
 ################### CLONING ############################
-# GitHub ---------------------------> 
+# GitHub ---------------------------> git
 git clone https://github.com/q2e213xxx
-# You can clone via HTTPs (Server certificates, TLS) or SSH (more secure)
+# You can clone via HTTPs (Server certificates, TLS) or using an 
+# SSH key (more secure, since it uses public key cryptography encryption)
 # Recommended order:
 git add .
 git commit -m "Cambia xml"
@@ -54,5 +55,7 @@ protocol=https
 # Fatal: The current branch master has no upstream branch.
 # Solution: To push the current branch and set the remote as upstream, use
 git push --set-upstream origin master
+git push -u origin master # Same thing
+# -u is a shorthand for --set-upstream
 
 git branch -a # Shows all branches, both remote and local
