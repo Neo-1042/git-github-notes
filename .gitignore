@@ -1,4 +1,4 @@
 test.log
 *.log
 !test7.log
-DS_Store
+.DS_Store
