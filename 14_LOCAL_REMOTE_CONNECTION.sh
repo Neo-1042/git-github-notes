@@ -38,3 +38,8 @@ git ls-remote # list all the ACTUAL remote branches
 git fetch origin # brings the 'feature-remote' branch to the local directory 'remotes/origin/feature-remote'
 git pull origin master
 #################################
+# Extra: to rename local branch 'main' to 'master' after it was renamed on the remote repo:
+git branch -m main master
+git fetch origin
+git branch -u origin/master master
+git remote set-head origin -a
