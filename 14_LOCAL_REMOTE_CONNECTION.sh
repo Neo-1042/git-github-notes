@@ -29,5 +29,12 @@ git branch -a
 #   master
 #   remotes/origin/feature
 #   remotes/origin/master
-
+#################################
+# remotes/origin/master vs the ACTUAL remote branch
+git branch -r # Intermediary copy of the actual remote branch
 git ls-remote # list all the ACTUAL remote branches
+#################################
+# Create a branch from GitHub: 'feature-remote'
+git fetch origin # brings the 'feature-remote' branch to the local directory 'remotes/origin/feature-remote'
+git pull origin master
+#################################
