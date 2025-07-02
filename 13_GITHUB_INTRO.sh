@@ -59,3 +59,6 @@ git push -u origin master # Same thing
 # -u is a shorthand for --set-upstream
 
 git branch -a # Shows all branches, both remote and local
+###################################################################################################
+# ERROR: "File Names Too Long" on Windows:
+git clone -c core.longpaths=true <https://github.com...>
