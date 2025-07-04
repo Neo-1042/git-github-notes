@@ -16,6 +16,8 @@ git remote add origin https://github.com/Neo-1042/git-github-notes.git
 git remote add ssh-origin git@github.com:Neo-1042/git-github-notes.git
 # Verify that you set the URL correctly:
 git remote -v
+# Set the name of the 'main' or 'master' branch:
+git branch -M master
 # Push the local data from git to GitHub
 git push
 git push -u origin master # or 'main', depending on the name of the branch
