@@ -7,8 +7,8 @@ git remote -v # Verify that you linked the local <-> remote repos correctly
 # Understading the workflow
 
 # Local branch             -> master
-# Remote tracking branch   -> remotes/origin/master (intermediary)
-# Remote branch ("origin") -> master
+# Remote tracking branch   -> remotes/origin/master (intermediary, a copy of the remote branch)
+# Remote branch ("origin") -> master (actual remote branch)
 
 git fetch # fetch the latest changes from the remote branch and add them to remotes/origin/master
 git merge # remotes/origin/master (local, read-only for us)
