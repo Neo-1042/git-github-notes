@@ -41,6 +41,7 @@ git pull # pulls code from GitHub to my working directory.
 git clone https://github.com/q2e213xxx
 # You can clone via HTTPs (Server certificates, TLS) or using an 
 # SSH key (more secure, since it uses public key cryptography encryption)
+#########################################################
 # Recommended order:
 git add .
 git commit -m "Cambia xml"

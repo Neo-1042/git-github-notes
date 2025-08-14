@@ -55,3 +55,48 @@ git switch feature-remote
     git push # OK. It's already on GitHub
 
 git branch -vv # More details about branches
+###################################################################################################
+# Remote and Tracking Branches. Command overview
+git remote # Show remote servers
+git branch -a # List all branches (local)
+git branch -r # Remote tracking branches
+# ****************************************************** #
+git remote show origin # Show detailed configuration
+# ****************************************************** #
+git branch -vv # List local tracking branches and their remotes
+git branch --track development origin/development # Craete local tracking branch called 'development'
+
+################### CLONING ############################
+# GitHub ---------------------------> git
+git clone https://github.com/Neo-1042/git-github-notes.git
+# You can clone via HTTPs (Server certificates, TLS) or using an 
+# SSH key (more secure, since it uses public key cryptography encryption)
+git clone git@github.com:Neo-1042/git-github-notes.git
+# SSH Reminder: ssh user@FQDN
+########################################################
+git branch
+git branch -a
+git branch -vv # List local tracking branches and their respective remotes
+# To work on the 'feature' branch, you create a local tracking branch
+#   which refers to the remote tracking branch:
+git branch --track origin/feature remotes/origin/feature
+git branch -a # Now shows:
+# *master
+# origin/feature
+git checkout -b "feature-local"
+git branch -a
+git branch -vv # "feature-local" is not currently referring to any remote branch
+touch file1.txt
+git add .
+git commit -m "Add file1-txt"
+git push origin feature-local # Push that branch to a new remote branch called "feature-local"
+git branch -vv # Unfortunately, this is showing that this 'feature-local' is not referring to the
+               # the desired remote tracking branch
+# How to turn it into a LOCAL TRACKING BRANCH?
+git checkout master
+git branch -D feature-local
+git branch --track feature-local origin/feature-local
+git branch -vv # Shows that 'feature-local' is tracking [origin/feature-local]
+# feature-local  ff1d76f [origin/feature-local] Add file1.txt
+# *master        4f5ddf4 [origin/master] Commit number 2
+# origin/feature 59551d5 [remotes/origin/feature] F1 commit
