@@ -65,3 +65,28 @@ git branch -a # Shows all branches, both remote and local
 ###################################################################################################
 # ERROR: "File Names Too Long" on Windows:
 git clone -c core.longpaths=true <https://github.com...>
+
+###################################################################################################
+# BONUS: Create a remote GitHub repository directly from your local environment
+# 
+# You can create a remote GitHub repository directly from your local Git repository without # manually creating it on GitHub first. You need to have either:
+# GitHub CLI (gh) tool or 
+# GitHub’s API. 
+
+# Using the GitHub CLI:
+
+# Authenticate with GitHub
+gh auth login
+
+# Initialize your local repo:
+git init
+git add .
+git commit -m "Initial commit"
+
+# Create the remote GitHub repository
+gh repo create your-repo-name --public --source=. --remote=origin --push
+# --source=. tells it to use the current directory.
+# --remote=origin sets the remote.
+# --push pushes your code after creation.
+
+# EOF
