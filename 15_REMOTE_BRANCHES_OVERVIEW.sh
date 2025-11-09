@@ -100,3 +100,11 @@ git branch -vv # Shows that 'feature-local' is tracking [origin/feature-local]
 # feature-local  ff1d76f [origin/feature-local] Add file1.txt
 # *master        4f5ddf4 [origin/master] Commit number 2
 # origin/feature 59551d5 [remotes/origin/feature] F1 commit
+###############################################################################
+# LOCAL AND REMOTE TRACKING BRANCHES
+git remote # Show remote servers (origin)
+git branch -a # List all branches
+git branch -r # remote tracking branches
+# origin/feature, origin/master, origin/feature2
+git remote show origin # Show detailed configuration
+git remote -vv # List local tracking branches and their remotes
