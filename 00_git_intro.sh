@@ -26,6 +26,7 @@ git ls-files # List all files in SA
 
 git add filename.txt
 git add . # Add all to SA
+git add -A # Same as 'git add .'
 git commit -m "Create new commit"
 # Correcting a commit message (before pushing it to remote repo)
 git commit --amend -m "Correct commit message"

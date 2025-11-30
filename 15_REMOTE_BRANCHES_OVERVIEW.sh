@@ -102,9 +102,85 @@ git branch -vv # Shows that 'feature-local' is tracking [origin/feature-local]
 # origin/feature 59551d5 [remotes/origin/feature] F1 commit
 ###############################################################################
 # LOCAL AND REMOTE TRACKING BRANCHES
+# 20251108 review
 git remote # Show remote servers (origin)
 git branch -a # List all branches
 git branch -r # remote tracking branches
 # origin/feature, origin/master, origin/feature2
 git remote show origin # Show detailed configuration
 git remote -vv # List local tracking branches and their remotes
+###############################################################################
+# Access an existing GitHub repository
+# 20251129 PRACTICE
+cd /GIT/
+git clone git@github.com:Neo-1042/new_repository.git
+cd new_repository
+# Working with the recently cloned repository
+git branch
+# * master
+git branch -a
+# * master
+# remotes/origin/HEAD -> origin/master
+# remotes/origin/feature
+# remotes/origin/feature-remote
+# remotes/origin/master
+git branch -vv
+# We see that, indeed, master is a LOCAL TRACKING BRANCH
+# * master 4f5ddf4 [origin/master] m2 ----> Contains all the information of the remote tracking branch
+# But the others are missing!
+# If you want to work in another branch, you create a remote tracking branch for that other remote branch
+git branch --track origin/feature remotes/origin/feature
+# Message = Branch 'origin/feature" set up to track remote branch 'feature' from 'origin'
+
+# Now, we will see different messages for "git branch -a" and "git branch -vv"
+git branch -a
+# * master
+# origin/feature (THIS ONE IS NEW)
+# remotes/origin/HEAD -> origin/master
+# remotes/origin/feature
+# remotes/origin/feature-remote
+# remotes/origin/master
+git branch -vv # Show verbose information for local branches only
+# Now origin/feature appears as a local branch, cool.
+# master         4f5ddf4 [origin/master] m2
+# origin/feature 59551d5 [remotes/origin/feature] f1
+###############################################################################
+# Adding a new branch locally and then pushing it to the remote repository
+git checkout -b "local-branch"
+git branch -a
+# * local-branch (NEW)
+# master
+# origin/feature
+# remotes/origin/HEAD -> origin/master
+# remotes/origin/feature
+# remotes/origin/feature-remote
+# remotes/origin/master
+git branch -vv
+# * local-branch 4f5ddf4 m2 ------> NEW, this branch is not in the remote repository yet.
+# master         4f5ddf4 [origin/master] m2
+# origin/feature 59551d5 [remotes/origin/feature] f1
+
+touch somefile.txt
+git add .
+git commit -m "Add somefile.txt to 'local-branch' "
+git push origin local-branch
+# [...]
+# [new branch] local-branch -> local-branch
+
+# This new branch is shown here:
+git branch -a
+# HOWEVER, it is not yet being shown here:
+git branch -vv
+
+# Switch to master
+git checkout master
+# Remove this local branch
+git branch -D local-branch
+# Create a new local-tracking branch
+git branch --track origin/local-branch remotes/origin/local-branch
+
+git branch -vv
+# local-branch   ff1d76f [origin/local-branch] Add somefile.txt ------> NEW
+# master         4f5ddf4 [origin/master] m2
+# origin/feature 59551d5 [remotes/origin/feature] f1
+# OK. SUCCESS

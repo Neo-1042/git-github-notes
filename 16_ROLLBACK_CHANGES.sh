@@ -12,4 +12,3 @@ git push origin <branch_name> --force
 git revert HEAD
 
 ####################################################
-# Now, here is a 'undo my undo' method: (TODO)
