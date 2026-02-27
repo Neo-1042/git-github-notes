@@ -89,4 +89,8 @@ gh repo create your-repo-name --public --source=. --remote=origin --push
 # --remote=origin sets the remote.
 # --push pushes your code after creation.
 
+# Cool tip for Windows "File Names Too Long ERROR"
+
+git clone -c core.longpaths=true <url>
+
 # EOF
