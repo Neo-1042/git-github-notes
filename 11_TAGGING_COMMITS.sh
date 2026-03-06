@@ -32,8 +32,14 @@ git switch master # go back to the HEAD
 git tag -d 1.0 
 
 # ANNOTATED TAG (full object)
-git tag -a 2.0 commit2_id -m "This is the latest version of the app"
+git tag -a 2.0 <commit_hash> -m "This is the latest version of the app"
 git tag
 git show
 git tag -d 2.0
+###################################################################################################
+# Recommended order:
+git add .
+git commit -m "Cambia xml"
+git push -u origin development # Upstream
+git tag -a v1.0.0 <commit_hash> -m "First stable release wujuu"
 ###################################################################################################
