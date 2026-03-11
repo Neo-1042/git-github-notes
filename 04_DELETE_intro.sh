@@ -90,4 +90,19 @@ git branch -d feature-branch # Only deletes branch 'feature-branch' if it was al
 git branch -D feature-branch # Forces the deletion of the branch, no matter if it was merged or not
 git branch -D second-branch third-branch # Force delete multiple branches
 ###################################################################################################
+# Add a file to .gitignore, and then remove it from git (SA)
+# Suppose you added an "application.properties" file that should not be tracked.
+
+# First, add it to the gitignore file:
+echo "src/main/resources/application.properties" >> .gitignore
+# Second, remove the file from the staging area.
+# That is, move it from SA -> WD only.
+git rm --cached src/main/resources/application.properties
+###### CAREFUL:
+# git rm <file> # Removes from SA but also DELETES from the working directory
+###### CAREFUL:
+# Commit these changes
+git add -A
+git commit -m "Add properties to gitignore and remove it from SA"
+git push
 ###################################################################################################
