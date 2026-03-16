@@ -98,6 +98,8 @@ echo "src/main/resources/application.properties" >> .gitignore
 # Second, remove the file from the staging area.
 # That is, move it from SA -> WD only.
 git rm --cached src/main/resources/application.properties
+# Verify:
+git check-ignore -v src/main/resources/application.properties
 ###### CAREFUL:
 # git rm <file> # Removes from SA but also DELETES from the working directory
 ###### CAREFUL:
