@@ -307,6 +307,8 @@ git pull --ff-only
 git checkout -b hotfix/PROD-INC12345
 
 # Implement fix: add + commit
+git add -A
+git commit -m "Fixed issue INC12345"
 
 # Push and create PR: hotfix/PROD-INC12345 -> master
 git push -u origin hotfix/PROD-INC12345
@@ -325,5 +327,56 @@ git push origin v1.3.1
 git switch develop
 git pull --ff-only
 git merge --no-ff origin/master -m "Back-merge hotfix v1.3.1 from master"
-git push or
+git push origin develop
+
+# If UAT cycle is still active (the release branch in use)
+# Also merge there
+git switch release
+git pull --ff-only
+git merge --no-ff origin/master -m "Back-merge PROD hotfix v1.3.1 from master to release"
+git push origin release
+
+# Clean up hotfix branch
+git branch -d hotfix/PROD-INC12345
+git push origin --delete hotfix/PROD-INC12345
 ```
+
+# 7] Hygiene
+
+```bash
+# See the graph of recent merges
+git log --oneline --graph --decorate --all -n 30
+
+# Update everything and prune remote-tracking branches
+git fetch --all --prune
+# ¿? PENDING
+
+# Make sure you're exactly on the remote (no local drift)
+git checkout develop && git reset --hard origin/develop
+git checkout release && git reset --hard origin/release
+git checkout master  && git reset --hard origin/master
+# (Avoid this on protected branches unless you know what
+# you are doing)
+
+# Delete merged local branches
+git branch --merged | egrep -v '^\*|master|develop|release' | xargs -r git branch -d
+
+# Delete merged remote branches (manual; verify first)
+git branch -r --merged | sed 's/origin\///' \
+	| egrep -v '^(master|develop|release)$' \
+	| xargs -I{} git push origin --delete {}
+```
+
+
+# Best Practices Recap
+
+1. **No direct commits to `master`**
+2. Use **PRs** from `release` or `hotfix/*`
+3. Always **back-merge** to keep branches consistent  
+(`master` -> `develop` and `master` -> `release` if UAT is
+still active.)
+4. Prefer `--no-ff` **(no fast forward) merges** for long-lived
+branches to keep explicit merge records.
+5. Use **branch protections** and CI/CD gates (build, tests,
+security scans) in BitBucket.
+6. **Tag** every **PROD** release.
