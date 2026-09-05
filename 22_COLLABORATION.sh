@@ -12,4 +12,18 @@
 # Account Types
 # Personal User Account
 # Organizational Account
-# Enterprise Account
+# Enterprise Account -> Central management of multiple GitHub accounts
+# GitHub Enterprise Cloud and GitHub Enterprise Server
+
+# GitHub > Settings > Organizations.
+
+# Base Permissions -> {No permissions, Read, Write, Admin}
+# Base Permissions apply to all members and excludes outside collaborators.
+
+# Invitations to outside collaborators are possible.
+# Triage = Read + Clone, manage issues and pull requests.
+
+# Reminder:
+cd Workspace
+git clone https://*nuclear.git # Will create a new folder.
+git clone https://*nuclear.git . # Uses the current folder and places everything there.
