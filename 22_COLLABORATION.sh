@@ -27,3 +27,10 @@
 cd Workspace
 git clone https://*nuclear.git # Will create a new folder.
 git clone https://*nuclear.git . # Uses the current folder and places everything there.
+
+# Teams vs Organizations
+
+# "Through this team, this member will receive access to 2 repositories"
+
+# SETTINGS LEVELS
+# Individual || Member Repository || Outside collaborators || Team Members
