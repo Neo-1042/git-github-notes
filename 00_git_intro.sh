@@ -1,20 +1,34 @@
-28/March/2025
+# Start:  2025-03-28
+# Review: 2026-09-06
 
-Git means tracking changes, NOT storing files again and again!
+# Git means tracking changes, NOT storing files again and again!
 
-Working Directory WD = Local directory tracked by git (.git hidden folder)
+# Working Directory WD = Local directory tracked by git (.git hidden folder)
 
-Repository = Where all the version management happens
+# Repository = Where all the version management happens
 
-The git repository is divided into two areas:
-[1] Staging Area (Basically an index File) => Draft area before becoming an actual commit
-[2] Commits (Contains the different snapshots)
+# The git repository is divided into two areas:
+# [1] Staging Area (Basically an index File) => Draft area before becoming an actual commit
+# [2] Commits (Contains the different snapshots)
 
-Note: The commits set is a subset of the staging area set. i.e., every file in the commit area is also
-in the staging area, but not necessarily the other way around.
+# Note: The commits set is a subset of the staging area set. i.e., every file in the commit area is also
+# in the staging area, but not necessarily the other way around.
 
 Workflow:
 WD --> SD --> Commits
+
+# Understanding commits as snapshots
+# Using git to track only changes. git doesn't remember files over and over again
+
+# Working directory (tree): a folder that is tracked/managed by git
+# (Creates the .git directory)
+
+# Branches
+# master = main branch
+
+# The repository contains 2 different areas: 
+# 1] Staging Area (index file)
+# 2] Commits (Objects Folder)
 ---------------------------------------------------------------------------------------------------
 # BASIC COMMANDS SUMMARY
 git --version
@@ -86,7 +100,7 @@ git log # Returns the hash (identifier)
 #                     run code,
 #                     execute files,
 #                     work with git.
-# Windows offers 3 options: command prompt (cmd), PowerShell (W7), Git Bash (emulation)
+# Windows offers 3 options: command prompt (cmd), PowerShell (from W7), Git Bash (emulation)
 ~   # Home directory
 # Absolute vs Relative Paths
 /   # Root directory
