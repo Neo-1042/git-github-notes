@@ -1,3 +1,4 @@
+#===================================================================================================================
 # COLLABORATION vs CONTRIBUTION
 
 # Contribute to a Project -> A developer improves the project without necessarily being assigned as a collaborator.
@@ -8,7 +9,7 @@ echo "Work Work Work" >> file.cpp
 git add -A
 git commit -m "Add code"
 git push
-##########################################################
+#===================================================================================================================
 # Contributor workflow -> FORKING & PULL REQUESTS
 # GitHub
 # Account A is the repository owner.
@@ -46,4 +47,28 @@ git push
 # Switch to the owner's account: Pull Requests > Open (New)
 # "user Y wants to merge 1 commit into 'mLoAmn:master' from 'manulorenz:master' "
 # The reviewer/owner can review changes > reject it with comments, approve it ---> Submit Review.
-# Merge --- Revert
+# The reviewer/owner has 3 options:
+#
+# 1. Comment (without explict approval)
+# 2. Approve
+# 3. Request changes (before merging)
+#===================================================================================================================
+# OPENING & CLOSING ISSUES
+
+# Example:
+# github.com/vuejs/vue ---> JavaScript framework.
+# Instead of randomly check the pull requests, you would normally check the "ISSUES" page of the repository.
+# The "issues" tab is used to report bugs.
+    # Assignees
+    # Labels
+    # Projects
+    # Milestone
+    # Linked PRs
+
+# GITHUB PROJECTS
+
+# Create a new project > Template (bug triage, kanban, etc.)
+# Open issues are available to add to the "To do" column, for example.
+# "Manage Automation for To Do/In Progress/Done"
+# Once an issue is closed, automatically move it to the "Done" column.
+#===================================================================================================================
