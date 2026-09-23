@@ -72,3 +72,20 @@ git push
 # "Manage Automation for To Do/In Progress/Done"
 # Once an issue is closed, automatically move it to the "Done" column.
 #===================================================================================================================
+# MODULE SUMMARY
+
+# 1. GitHub
+#   Account Types
+#   Repository Types
+#   Security
+# 2. Collaboration
+#   Collaborators
+#   Organizations
+#   Teams
+# 3. Contribution && Project Management
+#   Forks and Pull Requests
+#   Issues
+#   Projects
+
+# Next up: React JS + git + GitHub Project
+#===================================================================================================================
