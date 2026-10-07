@@ -73,3 +73,19 @@ git switch feature/cart-logic
 git remote add origin https://github.com/neo_1042/git-github-notes.git
 git branch -M main
 git push -u origin main # set upstream
+#-----------------------------------------------------------------------------------------------------------#
+# (Manuel)
+cd ~/GIT/Notes/git-github-notes
+git clone https://github.com/neo_1042/git-github-notes.git . # When the folder already exists
+
+npm install
+git branch # main ---> OK
+npm start # Start the development server
+# (Manuel modifies): src/components/Cart/Cart.js, Cart.module.css
+#    src/App.js
+git branch feature/cart
+git switch feature/cart
+# (Manuel) Add changes to new feature branch
+git add -A
+git commit -m "Add Cart modal"
+git push origin feature/cart
