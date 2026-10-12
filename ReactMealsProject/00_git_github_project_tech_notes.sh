@@ -21,6 +21,7 @@ const CartIcon = () => {
 };
 export default CartIcon;
 ###################################################################################################
+# (Max)
 # npm = Node Package Manager
 cd project-root
  # Get and install all the necessary dependencies for the project
@@ -56,7 +57,8 @@ git branch -m master main
 # function hideCartHandler() { setCartIsShown(false); }
 
 # Lorenz works on this feature: Controlling the cart visibility
-# Since we don't want to interefere with other collaborators' work, let us
+# Since we don't want to interefere with other collaborators' work, let us:
+
 # Create and switch into a new (temporary) branch:
 git branch feature/cart-logic
 #      +
@@ -89,3 +91,42 @@ git switch feature/cart
 git add -A
 git commit -m "Add Cart modal"
 git push origin feature/cart
+# NOT ALLOWED
+#-----------------------------------------------------------------------------------------------------------#
+# (Max) Revises permissions for Manuel
+# Max invites Manuel as a Collaborator
+#-----------------------------------------------------------------------------------------------------------#
+# (Manuel) Accepts the invitation
+git push origin feature/cart # OK
+#-----------------------------------------------------------------------------------------------------------#
+# (Max) Merging the Owner Branches
+git branch -a # The new branch does not yet appear.
+git pull
+git branch -a # The new branch now appears.
+git switch main # The main branch does not have the new code from Manuel, nor the feature/cart-logic from Max
+
+# Merging feature/cart-logic ---> main
+git merge feature/cart-logic # OK
+
+git branch -a
+# feature/cart-logic
+# * main
+# remotes/origin/feature/cart (not a local branch)
+# remotes/origin/main
+git checkout origin/feature/cart # To work with this remote branch (Solution 1)
+git checkout feature/cart # This creates a local tracking branch for origin/feature/cart (Solution 2)
+git branch
+# * feature/cart
+# feature/cart-logic
+# main
+
+# However, Max does not want to work with Manuel's branch. Thus, the following works:
+git switch main
+git merge feature/cart # Try and merge feature/cart ---> main
+# !!! MERGE CONFLICT !!! #
+# Fix conflicts and then commit the result.
+# Options:
+#   Accept Current Change
+#   Accept Incoming Change
+#   Accept Both Changes
+#   Compare Changes
