@@ -51,7 +51,7 @@ git branch -m master main
 #   store/
 # (Modifying) App.js
 
-# const [cartIsShown, setCartIsShown] = useState(false); // Cart overlay will initiall not be visible.
+# const [cartIsShown, setCartIsShown] = useState(false); // Cart overlay will initially not be visible.
 
 # function showCartHandler() { setCartIsShown(true); }
 # function hideCartHandler() { setCartIsShown(false); }

@@ -34,4 +34,12 @@ git merge feature/cart # Try and merge feature/cart ---> main
 #   Accept Both Changes ---> (Can you always do this?)
 #   Compare Changes
 
-# Max chose a "hybrid" solution, taking Manuel's changes and his changes, manually coding this.
+# Max (owner) chose a "hybrid" solution, taking Manuel's changes and his changes, by manually coding it all.
+# ... {cartIsShown && <Cart onClose={hideCartHandler} />}
+git add -A
+git commit -m "Merge cart feature"
+git branch # We are in 'main'
+npm start # The project RUNS correctly.
+git push origin main # After fixing the merge conflicts.
+############################################################################################################
+# GO TO: 03_pull_requests.sh
