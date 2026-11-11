@@ -32,3 +32,16 @@ cat ~/.ssh/id_ed25519.pub > /dev/clipboard # Git Bash
 
 # Validate connection
 ssh -T git@github.com
+
+# ChangedProxy Settings Eclipse Git
+####################################################################################
+# (20261110 -> First successful commit to this bank)
+# Reset to second-to-last commit
+git reset --hard HEAD~1
+git push origin feature/featureX --force
+
+# Upload new changes from there
+git add -A
+git commit -m "New changes"
+git push origin feature/featureX
+####################################################################################
